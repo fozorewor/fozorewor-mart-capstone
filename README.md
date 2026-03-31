@@ -1,4 +1,4 @@
-# Fozorewor Mart Capstone
+# Fozorewor Mart Capstone  Project Pitch
 
 Fozorewor Mart is an online grocery shopping platform built to deliver a fast, convenient, and reliable digital shopping experience.
 
