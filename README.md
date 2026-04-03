@@ -28,7 +28,7 @@ Develop a scalable, user-centric platform that:
 - Keyword-based product search
 - Cart management with quantity updates before checkout
 - Order placement with pricing details such as subtotal, tax, and delivery fee
-- Order history and real-time delivery tracking
+- Order history and order status tracking
 
 ## Future Enhancements
 
@@ -45,3 +45,22 @@ The platform is expected to provide a scalable and efficient solution that:
 - Enhances user convenience
 - Improves shopping reliability
 - Supports long-term platform expansion
+
+## Database Schema
+
+The database for this project includes:
+
+- `users`
+- `categories`
+- `products`
+- `carts`
+- `cart_items`
+- `orders`
+- `order_items`
+
+This schema supports product browsing, cart management, order history, and viewing the details of a single order.
+
+## ER Diagram
+
+![ER Diagram](backend/db/table-diagram.png)
+[View DBML Schema](backend/db/schema.dbml)
