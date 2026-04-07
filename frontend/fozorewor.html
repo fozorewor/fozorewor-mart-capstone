@@ -85,6 +85,29 @@
 <div class="category">Snacks</div>
 <div class="category">Vegetables</div>
 </div>
+
+  <p id="hello-world" style="padding: 0 15px 15px;">Loading...</p>
+
+<script>
+  async function helloworld() {
+    try {
+      const response = await fetch("/api/hello");
+
+      if (response.status !== 200) {
+        throw new Error(`Unexpected status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      document.getElementById("hello-world").textContent = data.message;
+    } catch (error) {
+      document.getElementById("hello-world").textContent =
+        "Failed to load Hello World";
+      console.error(error);
+    }
+  }
+
+  helloworld();
+</script>
  
 </body>
 </html>

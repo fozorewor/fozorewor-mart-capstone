@@ -39,6 +39,10 @@ app.get("/health", (_req, res) => {
   res.json({ ok: true });
 });
 
+app.get("/api/hello", (_req, res) => {
+  res.status(200).json({ message: "Hello World" });
+});
+
 app.get("/health/db", async (_req, res, next) => {
   try {
     await db.query("SELECT 1 AS ok");
