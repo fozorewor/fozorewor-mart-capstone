@@ -1,66 +1,100 @@
-# Fozorewor Mart Capstone  Project Pitch
+# Fozorewor Mart
 
-Fozorewor Mart is an online grocery shopping platform built to deliver a fast, convenient, and reliable digital shopping experience.
+Fozorewor Mart is a single-service grocery web app focused on one clean core deliverable: authentication plus a seeded product catalog, deployed from one Render URL.
 
-## Overview
+## Problem Statement
 
-This web-based application allows users to:
+The project needs a clean, presentable main branch with a working core feature that can run consistently across machines and deploy simply on Render.
 
-- Browse grocery products
-- Manage shopping carts
-- Place customer orders
+## Current Scope
 
-The goal is to make grocery shopping simpler while supporting efficient order processing and delivery management.
+- Register with `username`, `email`, and `password`
+- Log in with `username or email` and `password`
+- Reset a password by email
+- Seed grocery categories and products into Postgres
+- Expose operational visibility with New Relic, Prometheus, and Grafana
+- Serve frontend and backend from one app and one URL
 
-## Objective
+## Distinguishing Features
 
-Develop a scalable, user-centric platform that:
+- Single Render web service deployment for both frontend and backend
+- Same-origin auth API calls
+- Seeded grocery data stored in Postgres
+- Built-in monitoring endpoints and dashboards
 
-- Simplifies grocery shopping
-- Improves customer convenience
-- Supports efficient order fulfillment
-- Creates a strong foundation for future growth
+## Tech Stack
 
-## Core Features
+- Frontend: React, React Router, Vite
+- Backend: Node.js, Express
+- Database: PostgreSQL
+- Auth: bcrypt, JSON Web Tokens
+- Observability: New Relic, Prometheus, Grafana
+- Containerization: Docker, Docker Compose
 
-- Secure user registration and login
-- Product browsing by category
-- Keyword-based product search
-- Cart management with quantity updates before checkout
-- Order placement with pricing details such as subtotal, tax, and delivery fee
-- Order history and order status tracking
+## Architecture Overview
 
-## Future Enhancements
+- `frontend/src`
+  React app, auth pages, layout, and browser-side New Relic setup
+- `backend/api`
+  Express route handlers
+- `backend/queries`
+  Database access for auth
+- `backend/db`
+  SQL schema, reset script, seed entrypoint, and product seed data
+- `backend/middleware`
+  Shared Express middleware used by the active app
+- `prometheus` and `grafana`
+  Local monitoring configuration
 
-- Product reviews for verified purchases
-- Inventory tracking with real-time stock updates
-- Admin dashboard for managing products and orders
-- Favorites and "buy again" recommendations
-- Secure payment integration for complete checkout
+## Core User Flow
 
-## Expected Outcome
+1. A user registers with a username, email, and password.
+2. The backend stores the account in Postgres and returns a JWT.
+3. The user can log in with either username or email.
+4. If needed, the user can update their password with the forgot-password flow.
 
-The platform is expected to provide a scalable and efficient solution that:
+## Deployment
 
-- Enhances user convenience
-- Improves shopping reliability
-- Supports long-term platform expansion
+The app is structured as one deployable service. The backend serves the built frontend, so Render can host everything at one URL such as:
+
+`https://fozorewor-mart-capstone.onrender.com/`
+
+## Local Development
+
+Frontend:
+
+```powershell
+cd frontend
+npm install
+npm run build
+```
+
+Backend:
+
+```powershell
+cd backend
+npm install
+npm run db:reset
+npm run db:seed
+npm run dev
+```
+
+Docker:
+
+```powershell
+docker compose up --build
+```
 
 ## Database Schema
 
-The database for this project includes:
+The current scoped schema includes:
 
 - `users`
 - `categories`
 - `products`
-- `carts`
-- `cart_items`
-- `orders`
-- `order_items`
-
-This schema supports product browsing, cart management, order history, and viewing the details of a single order.
 
 ## ER Diagram
 
 ![ER Diagram](backend/db/table-diagram.png)
-[View DBML Schema](backend/db/schema.dbml)
+
+The DBML source is in [backend/db/schema.dbml](backend/db/schema.dbml).

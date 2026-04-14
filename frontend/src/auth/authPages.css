@@ -1,0 +1,256 @@
+:root {
+  --auth-bg-0: #e8f5ee;
+  --auth-bg-1: #f2fbf6;
+  --auth-card: #ffffff;
+  --auth-text: #0f172a;
+  --auth-muted: #5b6477;
+  --auth-border: #d7dde8;
+  --auth-field-bg: #eef4ff;
+  --auth-brand: #22a75a;
+  --auth-brand-dark: #1c8a4b;
+  --auth-shadow: 0 18px 55px rgba(15, 23, 42, 0.12);
+  --auth-radius: 18px;
+}
+
+.authPage {
+  min-height: 100vh;
+  padding: 42px 18px;
+  display: grid;
+  place-items: center;
+  color: var(--auth-text);
+  background: radial-gradient(
+      1200px 800px at 15% 10%,
+      var(--auth-bg-0),
+      transparent 55%
+    ),
+    radial-gradient(1200px 800px at 90% 80%, #e3f7ea, transparent 60%),
+    linear-gradient(135deg, var(--auth-bg-1), #f7fbff);
+}
+
+.authCard {
+  width: min(560px, 100%);
+  background: var(--auth-card);
+  border-radius: var(--auth-radius);
+  box-shadow: var(--auth-shadow);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.authInner {
+  padding: 34px 34px 26px;
+}
+
+.authBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.authBrandMark {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+}
+
+.authBrandName {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+.authBrandAccent {
+  color: var(--auth-brand);
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  font-size: 11px;
+}
+
+.authBrandTag {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--auth-brand);
+}
+
+.authTopline {
+  color: var(--auth-brand);
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  font-size: 12px;
+  margin: 0 0 4px;
+}
+
+.authTitle {
+  margin: 14px 0 6px;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.authSubtitle {
+  margin: 0 0 18px;
+  color: var(--auth-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.authCallout {
+  background: #eaf8f0;
+  border: 1px solid rgba(34, 167, 90, 0.22);
+  color: #155a34;
+  border-radius: 12px;
+  padding: 14px 14px;
+  margin: 10px 0 18px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.authForm {
+  display: grid;
+  gap: 14px;
+}
+
+.authField {
+  display: grid;
+  gap: 8px;
+}
+
+.authFieldLabel {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.authInput,
+.authSelect {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--auth-border);
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.authInputTinted {
+  background: var(--auth-field-bg);
+}
+
+.authInput:focus,
+.authSelect:focus {
+  border-color: rgba(34, 167, 90, 0.55);
+  box-shadow: 0 0 0 4px rgba(34, 167, 90, 0.12);
+}
+
+.authHint {
+  font-size: 12px;
+  color: var(--auth-muted);
+  margin-top: -3px;
+}
+
+.authDivider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 0;
+  color: #64748b;
+}
+
+.authDivider::before,
+.authDivider::after {
+  content: "";
+  height: 1px;
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.authDividerText {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.authPhoneRow {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 10px;
+}
+
+.authFormRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+
+.authLink {
+  color: var(--auth-brand);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
+
+.authPrimaryBtn {
+  margin-top: 6px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--auth-brand);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(34, 167, 90, 0.25);
+}
+
+.authPrimaryBtn:hover {
+  background: var(--auth-brand-dark);
+}
+
+.authPrimaryBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.authOutput {
+  min-height: 18px;
+  font-size: 13px;
+  color: var(--auth-muted);
+}
+
+.authOutputError {
+  color: #b91c1c;
+}
+
+.authOutputSuccess {
+  color: #166534;
+}
+
+.authFooter {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 18px 0 0;
+  color: #334155;
+  font-size: 14px;
+}
+
+.authFooter a {
+  font-weight: 800;
+}
+
+@media (max-width: 520px) {
+  .authInner {
+    padding: 26px 18px 20px;
+  }
+
+  .authTitle {
+    font-size: 28px;
+  }
+}
+

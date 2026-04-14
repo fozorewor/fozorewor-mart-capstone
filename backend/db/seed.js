@@ -1,11 +1,7 @@
-import db from "./client.js";
-import { createUser } from "../queries/users.js";
+import db from "#db/client";
+import { runSeed } from "./data/index.js";
 
 await db.connect();
-await seed();
+await runSeed();
 await db.end();
 console.log("🌱 Database seeded.");
-
-async function seed() {
-  await createUser("foo", "bar");
-}

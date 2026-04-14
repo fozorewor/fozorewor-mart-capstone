@@ -4,5 +4,7 @@ import { defineConfig } from "vitest/config";
 loadEnvFile();
 
 export default defineConfig({
-  test: {},
+  test: {
+    environment: "node",
+  },
 });

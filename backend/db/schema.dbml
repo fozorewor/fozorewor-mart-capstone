@@ -1,61 +1,32 @@
-Table categories {
-  id int [pk, increment]
-  name varchar(80) [NOT NULL, UNIQUE]
-  description text
-}
-
 Table users {
   id int [pk, increment]
-  username varchar(50) [NOT NULL, UNIQUE]
-  email varchar(120) [NOT NULL, UNIQUE]
-  password_hash text [NOT NULL]
-  first_name varchar(50)
-  last_name varchar(50)
-  created_at timestamp [NOT NULL]
+  username text [not null, unique]
+  email text [not null, unique]
+  password text [not null]
+  created_at timestamp [not null]
+}
+
+Table categories {
+  id int [pk, increment]
+  slug text [not null, unique]
+  name text [not null, unique]
+  description text
 }
 
 Table products {
   id int [pk, increment]
-  category_id int [NOT NULL, ref: > categories.id]
-  name varchar(120) [NOT NULL]
+  slug text [not null, unique]
+  category_id int [not null, ref: > categories.id]
+  name text [not null]
   description text
-  price decimal(10,2) [NOT NULL]
-  image_url text
-  stock_quantity int
-  is_active boolean [NOT NULL]
-  created_at timestamp [NOT NULL]
-}
-
-Table carts {
-  id int [pk, increment]
-  user_id int [NOT NULL, ref: > users.id]
-  created_at timestamp [NOT NULL]
-  updated_at timestamp [NOT NULL]
-}
-
-Table cart_items {
-  id int [pk, increment]
-  cart_id int [NOT NULL, ref: > carts.id]
-  product_id int [NOT NULL, ref: > products.id]
-  quantity int [NOT NULL]
-  added_at timestamp [NOT NULL]
-}
-
-Table orders {
-  id int [pk, increment]
-  user_id int [NOT NULL, ref: > users.id]
-  status varchar [NOT NULL]
-  subtotal decimal(10,2) [NOT NULL]
-  tax decimal(10,2) [NOT NULL]
-  delivery_fee decimal(10,2) [NOT NULL]
-  total decimal(10,2) [NOT NULL]
-  created_at timestamp [NOT NULL]
-}
-
-Table order_items {
-  id int [pk, increment]
-  order_id int [NOT NULL, ref: > orders.id]
-  product_id int [NOT NULL, ref: > products.id]
-  quantity int [NOT NULL]
-  price_at_purchase decimal(10,2) [NOT NULL]
+  keywords text [note: 'Stored as a Postgres text[] in schema.sql']
+  price_cents int [not null]
+  stock_quantity int [not null]
+  is_active boolean [not null]
+  rating_stars decimal(2,1) [not null]
+  rating_count int [not null]
+  unit_label text
+  image_path text
+  image_gallery_paths text [note: 'Stored as a Postgres text[] in schema.sql']
+  created_at timestamp [not null]
 }
