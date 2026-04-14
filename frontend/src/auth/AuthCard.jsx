@@ -18,15 +18,15 @@ function BrandMark() {
       />
       <path
         d="M25 52a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
-        fill="#22a75a"
+        fill="#0078d4"
       />
       <path
         d="M47 52a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
-        fill="#22a75a"
+        fill="#0078d4"
       />
       <path
         d="M30 16l4 6 7-8"
-        stroke="#22a75a"
+        stroke="#0078d4"
         strokeWidth="3.6"
         strokeLinecap="round"
         strokeLinejoin="round"

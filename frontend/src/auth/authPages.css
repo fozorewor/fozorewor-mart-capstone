@@ -1,13 +1,13 @@
 :root {
-  --auth-bg-0: #e8f5ee;
-  --auth-bg-1: #f2fbf6;
+  --auth-bg-0: #e8f2ff;
+  --auth-bg-1: #f3f8ff;
   --auth-card: #ffffff;
   --auth-text: #0f172a;
   --auth-muted: #5b6477;
   --auth-border: #d7dde8;
   --auth-field-bg: #eef4ff;
-  --auth-brand: #22a75a;
-  --auth-brand-dark: #1c8a4b;
+  --auth-brand: #0078d4;
+  --auth-brand-dark: #005ea6;
   --auth-shadow: 0 18px 55px rgba(15, 23, 42, 0.12);
   --auth-radius: 18px;
 }
@@ -23,7 +23,7 @@
       var(--auth-bg-0),
       transparent 55%
     ),
-    radial-gradient(1200px 800px at 90% 80%, #e3f7ea, transparent 60%),
+    radial-gradient(1200px 800px at 90% 80%, #dcecff, transparent 60%),
     linear-gradient(135deg, var(--auth-bg-1), #f7fbff);
 }
 
@@ -98,9 +98,9 @@
 }
 
 .authCallout {
-  background: #eaf8f0;
-  border: 1px solid rgba(34, 167, 90, 0.22);
-  color: #155a34;
+  background: #eaf3ff;
+  border: 1px solid rgba(0, 120, 212, 0.22);
+  color: #0b4f8a;
   border-radius: 12px;
   padding: 14px 14px;
   margin: 10px 0 18px;
@@ -141,8 +141,8 @@
 
 .authInput:focus,
 .authSelect:focus {
-  border-color: rgba(34, 167, 90, 0.55);
-  box-shadow: 0 0 0 4px rgba(34, 167, 90, 0.12);
+  border-color: rgba(0, 120, 212, 0.55);
+  box-shadow: 0 0 0 4px rgba(0, 120, 212, 0.12);
 }
 
 .authHint {
@@ -205,7 +205,7 @@
   font-size: 15px;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(34, 167, 90, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 120, 212, 0.25);
 }
 
 .authPrimaryBtn:hover {
@@ -228,7 +228,7 @@
 }
 
 .authOutputSuccess {
-  color: #166534;
+  color: #005ea6;
 }
 
 .authFooter {
