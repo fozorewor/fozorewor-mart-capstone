@@ -1,14 +1,14 @@
 :root {
-  --auth-bg-0: #e8f2ff;
-  --auth-bg-1: #f3f8ff;
-  --auth-card: #ffffff;
-  --auth-text: #0f172a;
-  --auth-muted: #5b6477;
-  --auth-border: #d7dde8;
-  --auth-field-bg: #eef4ff;
-  --auth-brand: #0078d4;
-  --auth-brand-dark: #005ea6;
-  --auth-shadow: 0 18px 55px rgba(15, 23, 42, 0.12);
+  --auth-bg-0: #eef5fd;
+  --auth-bg-1: #f7f8fa;
+  --auth-card: var(--fz-surface, #ffffff);
+  --auth-text: var(--fz-text, #111827);
+  --auth-muted: var(--fz-muted, #6b7280);
+  --auth-border: rgba(17, 24, 39, 0.12);
+  --auth-field-bg: #fbfbfc;
+  --auth-brand: var(--fz-accent, #0078d4);
+  --auth-brand-dark: var(--fz-accent-2, #005ea6);
+  --auth-shadow: var(--fz-shadow, 0 12px 24px rgba(17, 24, 39, 0.08));
   --auth-radius: 18px;
 }
 
@@ -19,12 +19,12 @@
   place-items: center;
   color: var(--auth-text);
   background: radial-gradient(
-      1200px 800px at 15% 10%,
+      960px 620px at 12% 10%,
       var(--auth-bg-0),
       transparent 55%
     ),
-    radial-gradient(1200px 800px at 90% 80%, #dcecff, transparent 60%),
-    linear-gradient(135deg, var(--auth-bg-1), #f7fbff);
+    radial-gradient(920px 640px at 88% 82%, #e7f1fb, transparent 58%),
+    linear-gradient(180deg, var(--auth-bg-1), #f3f6fa);
 }
 
 .authCard {
@@ -32,7 +32,7 @@
   background: var(--auth-card);
   border-radius: var(--auth-radius);
   box-shadow: var(--auth-shadow);
-  border: 1px solid rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.1);
   overflow: hidden;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .authCallout {
-  background: #eaf3ff;
+  background: #edf5ff;
   border: 1px solid rgba(0, 120, 212, 0.22);
   color: #0b4f8a;
   border-radius: 12px;
@@ -132,7 +132,7 @@
   border: 1px solid var(--auth-border);
   font-size: 14px;
   outline: none;
-  background: #fff;
+  background: var(--auth-field-bg);
 }
 
 .authInputTinted {
@@ -199,13 +199,13 @@
   margin-top: 6px;
   height: 48px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(17, 24, 39, 0.08);
   background: var(--auth-brand);
   color: white;
   font-size: 15px;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 120, 212, 0.25);
+  box-shadow: 0 12px 24px rgba(0, 120, 212, 0.2);
 }
 
 .authPrimaryBtn:hover {
