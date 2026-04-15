@@ -142,7 +142,8 @@ main {
   font-weight: 700;
 }
 
-.fz-nav-link-primary:hover {
+.fz-nav-link-primary:hover,
+.fz-nav-link-primary:focus-visible {
   background: #1683d8;
 }
 

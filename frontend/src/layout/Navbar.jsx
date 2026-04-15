@@ -40,7 +40,7 @@ export default function Navbar() {
           </button>
         ) : (
           <>
-            <NavLink className="fz-nav-link" to="/login">
+            <NavLink className="fz-nav-link fz-nav-link-primary" to="/login">
               Login
             </NavLink>
             <NavLink className="fz-nav-link fz-nav-link-primary" to="/register">
@@ -49,7 +49,7 @@ export default function Navbar() {
           </>
         )}
 
-        <button className="fz-nav-link" type="button">
+        <button className="fz-nav-link fz-nav-link-primary" type="button">
           Returns &amp; Orders
         </button>
 
