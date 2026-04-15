@@ -39,9 +39,14 @@ export default function Navbar() {
             Log out
           </button>
         ) : (
-          <NavLink className="fz-nav-link" to="/login">
-            Login
-          </NavLink>
+          <>
+            <NavLink className="fz-nav-link" to="/login">
+              Login
+            </NavLink>
+            <NavLink className="fz-nav-link fz-nav-link-primary" to="/register">
+              Register
+            </NavLink>
+          </>
         )}
 
         <button className="fz-nav-link" type="button">

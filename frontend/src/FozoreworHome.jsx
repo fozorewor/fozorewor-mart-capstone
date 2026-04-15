@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+
+import { useAuth } from "./auth/AuthContext";
+
 const CATEGORIES = [
   "All",
   "Dairy",
@@ -18,8 +22,32 @@ const PLACEHOLDER_PRODUCTS = [
 ];
 
 export default function FozoreworHome() {
+  const { token } = useAuth();
+
   return (
     <div className="fz-page">
+      {!token && (
+        <section className="fz-hero">
+          <div className="fz-hero-copy">
+            <p className="fz-eyebrow">New to Fozorewor Mart?</p>
+            <h1>Create your account and start shopping faster.</h1>
+            <p className="fz-hero-text">
+              Register with your username, email, and password to save your session and use
+              the grocery catalog from one app.
+            </p>
+          </div>
+
+          <div className="fz-hero-actions">
+            <Link className="fz-primary fz-primary-link" to="/register">
+              Register now
+            </Link>
+            <Link className="fz-secondary-link" to="/login">
+              Already have an account? Sign in
+            </Link>
+          </div>
+        </section>
+      )}
+
       <section className="fz-categories" aria-label="Categories">
         {CATEGORIES.map((category) => (
           <button key={category} className="fz-chip" type="button">
