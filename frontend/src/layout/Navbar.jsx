@@ -35,7 +35,11 @@ export default function Navbar() {
 
       <nav className="fz-nav-actions" aria-label="Account and cart">
         {token ? (
-          <button className="fz-nav-button" type="button" onClick={handleLogout}>
+          <button
+            className="fz-nav-button fz-nav-link-primary"
+            type="button"
+            onClick={handleLogout}
+          >
             Log out
           </button>
         ) : (
