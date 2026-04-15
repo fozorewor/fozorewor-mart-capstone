@@ -39,7 +39,8 @@ export default function Navbar() {
             className="fz-nav-button fz-nav-link-primary"
             type="button"
             onClick={handleLogout}
-          >
+
+>
             Log out
           </button>
         ) : (

@@ -66,7 +66,7 @@ Develop a scalable, user-centric platform that:
 
 ## Deployment
 
-The app is structured as one deployable service. The backend serves the built frontend, so Render can host everything at one URL such as:
+The app is structured as one deployable service. The backend serves the built frontend, so Render can host everything at one URL:
 
 `https://fozorewor-mart-capstone.onrender.com/`
 
