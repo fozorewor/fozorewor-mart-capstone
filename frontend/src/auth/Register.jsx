@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import AuthCard from "./AuthCard";
 
+const MIN_PASSWORD_LENGTH = 8;
+
 /** A form that allows users to register for a new account */
 export default function Register() {
   const { register } = useAuth();
@@ -28,6 +30,14 @@ export default function Register() {
     if (password !== confirmPassword) {
       setSuccess(null);
       setError("Passwords do not match.");
+      return;
+    }
+
+    // WHY (Functionality): match backend password rules in the form so users
+    // get immediate guidance instead of avoidable submit-and-fail cycles.
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      setSuccess(null);
+      setError(`Password must be at least ${MIN_PASSWORD_LENGTH} characters.`);
       return;
     }
 
@@ -92,6 +102,7 @@ export default function Register() {
             name="password"
             placeholder="Create a password"
             autoComplete="new-password"
+            minLength={MIN_PASSWORD_LENGTH}
             required
           />
         </label>
@@ -104,6 +115,7 @@ export default function Register() {
             name="confirmPassword"
             placeholder="Confirm your password"
             autoComplete="new-password"
+            minLength={MIN_PASSWORD_LENGTH}
             required
           />
         </label>

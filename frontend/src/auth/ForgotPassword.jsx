@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import AuthCard from "./AuthCard";
 import { useAuth } from "./AuthContext";
 
+const MIN_PASSWORD_LENGTH = 8;
+
 export default function ForgotPassword() {
   const { resetPassword } = useAuth();
   const [message, setMessage] = useState(null);
@@ -20,9 +22,11 @@ export default function ForgotPassword() {
       setMessage("Enter your registered email.");
       return;
     }
-    if (!password || password.length < 6) {
+    // WHY (Functionality): keep reset-password validation in sync with backend
+    // rules so users see consistent expectations across auth screens.
+    if (!password || password.length < MIN_PASSWORD_LENGTH) {
       setKind("error");
-      setMessage("New password must be at least 6 characters.");
+      setMessage(`New password must be at least ${MIN_PASSWORD_LENGTH} characters.`);
       return;
     }
     if (password !== confirm) {
@@ -86,6 +90,7 @@ export default function ForgotPassword() {
             name="newPassword"
             placeholder="Create a new password"
             autoComplete="new-password"
+            minLength={MIN_PASSWORD_LENGTH}
             required
           />
         </label>
@@ -98,6 +103,7 @@ export default function ForgotPassword() {
             name="confirmPassword"
             placeholder="Re-enter new password"
             autoComplete="new-password"
+            minLength={MIN_PASSWORD_LENGTH}
             required
           />
         </label>
