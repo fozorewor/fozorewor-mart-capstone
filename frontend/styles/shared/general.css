@@ -2,6 +2,9 @@
   --brand-primary: #0078d4;
   --brand-primary-hover: #1683d8;
   --brand-primary-active: #005ea6;
+  --brand-accent-green: #2db46e;
+  --brand-accent-green-soft: rgba(45, 180, 110, 0.12);
+  --brand-accent-green-strong: #007600;
   --brand-text: rgb(33, 33, 33);
 }
 

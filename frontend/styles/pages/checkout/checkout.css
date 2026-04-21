@@ -65,7 +65,7 @@
   margin-top: 10px;
   padding: 10px 16px;
   border-radius: 8px;
-  background: rgb(45, 180, 110);
+  background: var(--brand-primary);
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -83,7 +83,7 @@
 }
 
 .checkoutPage .delivery-date {
-  color: rgb(0, 118, 0);
+  color: var(--brand-accent-green-strong);
   font-weight: 700;
   font-size: 18px;
   margin-top: 10px;
@@ -145,7 +145,7 @@
 }
 
 .checkoutPage .quantity-controls button:hover {
-  background: rgba(45, 180, 110, 0.1);
+  background: rgba(0, 120, 212, 0.1);
 }
 
 .checkoutPage .quantity-label {
@@ -243,7 +243,7 @@
 }
 
 .checkoutPage .delivery-option-date {
-  color: rgb(0, 118, 0);
+  color: var(--brand-accent-green-strong);
   font-weight: 500;
   margin-bottom: 3px;
 }

@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../auth/AuthContext";
 import { useCart } from "../cart/CartContext";
+import API from "../config/api";
 
 export default function Navbar() {
   const { token, logout } = useAuth();
@@ -16,8 +17,11 @@ export default function Navbar() {
   return (
     <header className="fz-nav">
       <NavLink className="fz-brand" to="/">
-        <span className="fz-brand-title">FOZOREWOR</span>
-        <span className="fz-brand-subtitle">MART</span>
+        <img
+          className="fz-brand-logo"
+          src={`${API}/images/icons/fozorewor-mart.png`}
+          alt="Fozorewor Mart"
+        />
       </NavLink>
 
       <form className="fz-search" role="search" onSubmit={(e) => e.preventDefault()}>
