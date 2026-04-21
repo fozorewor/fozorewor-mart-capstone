@@ -1,0 +1,308 @@
+.checkoutPage {
+  max-width: 1100px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  margin-top: 120px;
+  margin-bottom: 100px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkoutPage .page-title {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.checkoutPage .checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  column-gap: 18px;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+@media (max-width: 1000px) {
+  .checkoutPage {
+    max-width: 500px;
+  }
+
+  .checkoutPage .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkoutPage .cart-item-container,
+.checkoutPage .payment-summary {
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 12px;
+  padding: 18px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.checkoutPage .cart-item-container {
+  margin-bottom: 16px;
+}
+
+.checkoutPage .payment-summary {
+  padding-bottom: 20px;
+  position: sticky;
+  top: 92px;
+}
+
+.checkoutPage .empty-cart-message {
+  padding: 40px 20px;
+  text-align: center;
+  color: rgb(90, 90, 90);
+  font-size: 17px;
+}
+
+.checkoutPage .empty-cart-message a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: rgb(45, 180, 110);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .checkoutPage .payment-summary {
+    /* grid-row: 1 means this element will be placed into row
+      1 in the grid. (Normally, the row that an element is
+      placed in is determined by the order of the elements in
+      the HTML. grid-row overrides this default ordering). */
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+}
+
+.checkoutPage .delivery-date {
+  color: rgb(0, 118, 0);
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.checkoutPage .cart-item-details-grid {
+  display: grid;
+  grid-template-columns: 92px 1fr 1fr;
+  column-gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .checkoutPage .cart-item-details-grid {
+    grid-template-columns: 92px 1fr;
+    row-gap: 22px;
+  }
+}
+
+.checkoutPage .product-image {
+  max-width: 100%;
+  max-height: 110px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkoutPage .product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.checkoutPage .product-price {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.checkoutPage .quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.checkoutPage .quantity-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.checkoutPage .quantity-controls button:hover {
+  background: rgba(45, 180, 110, 0.1);
+}
+
+.checkoutPage .quantity-label {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.checkoutPage .delete-quantity-link {
+  margin-left: 12px;
+  color: rgb(177, 39, 4);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.checkoutPage .delete-quantity-link:hover {
+  text-decoration: underline;
+}
+
+.checkoutPage .cart-item-details-grid {
+  display: grid;
+  /* 100px 1fr 1fr; means the 2nd and 3rd column will
+     take up half the remaining space in the grid
+     (they will divide up the remaining space evenly). */
+  grid-template-columns: 100px 1fr 1fr;
+  column-gap: 25px;
+}
+
+@media (max-width: 1000px) {
+  .checkoutPage .cart-item-details-grid {
+    grid-template-columns: 100px 1fr;
+    row-gap: 30px;
+  }
+}
+
+.checkoutPage .product-image {
+  max-width: 100%;
+  max-height: 120px;
+
+  /* margin-left: auto;
+     margin-right auto;
+     Is a trick for centering an element horizontally
+     without needing a container. */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkoutPage .product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.checkoutPage .product-price {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.checkoutPage .product-quantity .link-primary {
+  margin-left: 3px;
+}
+
+@media (max-width: 1000px) {
+  .checkoutPage .delivery-options {
+    /* grid-column: 1 means this element will be placed
+       in column 1 in the grid. (Normally, the column that
+       an element is placed in is determined by the order
+       of the elements in the HTML. grid-column overrides
+       this default ordering).
+       
+       / span 2 means this element will take up 2 columns
+       in the grid (Normally, each element takes up 1
+       column in the grid). */
+    grid-column: 1 / span 2;
+  }
+}
+
+.checkoutPage .delivery-options-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.checkoutPage .delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.checkoutPage .delivery-option-input {
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.checkoutPage .delivery-option-date {
+  color: rgb(0, 118, 0);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.checkoutPage .delivery-option-price {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+
+.checkoutPage .payment-summary-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.checkoutPage .payment-summary-row {
+  display: grid;
+  /* 1fr auto; means the width of the 2nd column will be
+     determined by the elements inside the column (auto).
+     The 1st column will take up the remaining space. */
+  grid-template-columns: 1fr auto;
+
+  font-size: 15px;
+  margin-bottom: 9px;
+}
+
+.checkoutPage .payment-summary-money {
+  text-align: right;
+}
+
+.checkoutPage .subtotal-row .payment-summary-money {
+  border-top: 1px solid rgb(222, 222, 222);
+}
+
+.checkoutPage .subtotal-row div {
+  padding-top: 9px;
+}
+
+.checkoutPage .total-row {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  font-size: 18px;
+
+  border-top: 1px solid rgb(222, 222, 222);
+  padding-top: 18px;
+}
+
+.checkoutPage .place-order-button {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
+
+.checkoutPage .checkout-inline-error {
+  color: rgb(177, 39, 4);
+  font-weight: 600;
+  margin-top: 8px;
+}

@@ -1,0 +1,206 @@
+.checkout-header {
+  background-color: white;
+  padding: 8px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 1000;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkout-header-left-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 18px;
+  background: rgba(45, 180, 110, 0.08);
+  border: 1px solid rgba(45, 180, 110, 0.25);
+}
+
+.site-logo {
+  max-height: 32px;
+  height: auto;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.delivery-hint {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.delivery-time {
+  display: block;
+  font-weight: 700;
+  color: rgb(45, 180, 110);
+}
+
+.delivery-location {
+  display: block;
+  color: rgb(87, 87, 87);
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.location-refresh-button {
+  margin-top: 2px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: rgb(45, 180, 110);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.location-refresh-button:disabled {
+  color: rgb(120, 120, 120);
+  cursor: default;
+}
+
+/* @media is used to create responsive design (making the
+   website look good on any screen size). This @media
+   means when the screen width is 575px or less, different
+   styles (inside the {...}) will be applied. */
+@media (max-width: 575px) {
+  .checkout-header-left-section {
+    width: auto;
+  }
+}
+
+.checkout-header-middle-section {
+  flex: 1;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.return-to-home-link {
+  color: rgb(0, 113, 133);
+  font-size: 23px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .checkout-header-middle-section {
+    font-size: 20px;
+    margin-right: 60px;
+  }
+
+  .return-to-home-link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .checkout-header-middle-section {
+    margin-right: 5px;
+  }
+}
+
+.checkout-header-right-section {
+  text-align: right;
+  min-width: 220px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkout-header-right-section img {
+  height: 28px;
+  width: auto;
+}
+
+.checkout-cart-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-cart-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.checkout-cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(45, 180, 110);
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .checkout-header-right-section {
+    width: auto;
+  }
+}
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: rgb(55, 55, 55);
+  font-size: 0.95rem;
+}
+
+.header-link:hover {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.auth-link {
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.auth-logout {
+  background: white;
+  color: rgb(55, 55, 55);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}

@@ -17,6 +17,7 @@ RUN npm ci --omit=dev
 
 COPY backend/ ./
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
+COPY --from=frontend-builder /app/frontend/images /app/frontend/images
 
 EXPOSE 3005
 

@@ -110,7 +110,7 @@ main {
 }
 
 .fz-search-button:hover {
-  background: #1683d8;
+  background: var(--fz-accent-2);
 }
 
 .fz-nav-actions {
@@ -144,7 +144,7 @@ main {
 
 .fz-nav-link-primary:hover,
 .fz-nav-link-primary:focus-visible {
-  background: #1683d8;
+  background: var(--fz-accent-2);
 }
 
 .fz-cart {
@@ -326,12 +326,40 @@ main {
 
 .fz-card-media {
   background: linear-gradient(135deg, rgba(17, 24, 39, 0.04), rgba(17, 24, 39, 0.10));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fz-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f8fafc;
 }
 
 .fz-card-body {
   padding: 14px 14px 16px;
   display: grid;
   gap: 6px;
+}
+
+.fz-card-cart-state {
+  justify-self: start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.12);
+  color: #166534;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.fz-card-added-state {
+  justify-self: start;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .fz-card-title {
@@ -357,7 +385,7 @@ main {
 }
 
 .fz-primary:hover {
-  background: #1683d8;
+  background: var(--fz-accent-2);
 }
 
 .fz-primary-link {

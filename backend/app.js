@@ -3,6 +3,8 @@ import express from "express";
 import morgan from "morgan";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import ordersRouter from "#api/orders";
+import productsRouter from "#api/products";
 import usersRouter from "#api/users";
 import db from "#db/client";
 import getUserFromToken from "#middleware/getUserFromToken";
@@ -15,6 +17,7 @@ import {
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const frontendDir = path.resolve(__dirname, "../frontend");
 const frontendDistDir = path.resolve(__dirname, "../frontend/dist");
 const frontendIndexFile = path.join(frontendDistDir, "index.html");
 
@@ -33,6 +36,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(metricsMiddleware);
 app.use(getUserFromToken);
+app.use("/images", express.static(path.join(frontendDir, "images")));
+app.use("/orders", ordersRouter);
+app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use(express.static(frontendDistDir));
 
@@ -62,9 +68,12 @@ app.get("/metrics", async (_req, res, next) => {
   }
 });
 
-app.get(/^\/(?!users(?:\/|$)|health(?:\/|$)|metrics(?:\/|$)).*/, (_req, res) => {
-  res.sendFile(frontendIndexFile);
-});
+app.get(
+  /^\/(?!users(?:\/|$)|orders(?:\/|$)|products(?:\/|$)|health(?:\/|$)|metrics(?:\/|$)).*/,
+  (_req, res) => {
+    res.sendFile(frontendIndexFile);
+  },
+);
 
 app.use((req, res) => {
   res.status(404).json({

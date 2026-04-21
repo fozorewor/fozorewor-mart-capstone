@@ -1,9 +1,11 @@
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../auth/AuthContext";
+import { useCart } from "../cart/CartContext";
 
 export default function Navbar() {
   const { token, logout } = useAuth();
+  const { itemCount } = useCart();
   const navigate = useNavigate();
 
   async function handleLogout() {
@@ -39,8 +41,7 @@ export default function Navbar() {
             className="fz-nav-button fz-nav-link-primary"
             type="button"
             onClick={handleLogout}
-
->
+          >
             Log out
           </button>
         ) : (
@@ -54,13 +55,13 @@ export default function Navbar() {
           </>
         )}
 
-        <button className="fz-nav-link fz-nav-link-primary" type="button">
+        <NavLink className="fz-nav-link fz-nav-link-primary" to="/orders">
           Returns &amp; Orders
-        </button>
+        </NavLink>
 
-        <button className="fz-cart" type="button">
+        <button className="fz-cart" type="button" onClick={() => navigate("/checkout")}>
           <span className="fz-cart-badge" aria-label="Items in cart">
-            0
+            {itemCount}
           </span>
           My Cart
         </button>
