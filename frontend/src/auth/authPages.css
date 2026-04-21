@@ -43,27 +43,21 @@
 .authBrand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
   margin-bottom: 6px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: rgba(0, 120, 212, 0.04);
+  border: 1px solid rgba(0, 120, 212, 0.12);
+  width: fit-content;
 }
 
-.authBrandMark {
-  width: 44px;
+.authBrandLogo {
+  display: block;
+  width: auto;
   height: 44px;
-  flex: 0 0 auto;
-}
-
-.authBrandName {
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  line-height: 1.1;
-}
-
-.authBrandAccent {
-  color: var(--auth-brand);
-  font-weight: 900;
-  letter-spacing: 1.4px;
-  font-size: 11px;
+  max-width: 240px;
+  object-fit: contain;
 }
 
 .authBrandTag {
